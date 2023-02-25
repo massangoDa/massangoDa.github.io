@@ -1,0 +1,50 @@
+body {
+    margin-top:0px;
+}
+.titlebar {
+    transition:border 0.2s;
+    display:flex;
+    position: fixed;
+    background:var(--background-body);
+    border-bottom:1px solid transparent;
+    z-index:999;
+}
+.titlebar:hover {
+    border-bottom:1px solid var(--text-bright);
+
+}
+.content {
+    padding-top:50px;
+	font-weight:bold;
+}
+.navs {
+    margin-top:35px;
+    display:flex;
+    margin-left:auto;
+}
+.nav {
+    display:block;
+    margin-left:5px;
+}
+.nav:after {
+    margin-left:10px;
+    color:white;
+    content:"/";
+
+}
+.nav:last-child:after {
+    content:"";
+}
+.card {
+    display:block;
+    width:100%;
+    height:100%;
+    padding:4px;
+    padding-left:20px;
+    padding-right:20px;
+    background: var(--background);
+    
+}
+body {
+    font-family:うずらフォント;
+}

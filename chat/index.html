@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<title>Taru-Chat</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="./chat.js"></script>
+
+		<link href="./chat.css" rel="stylesheet">
+ 	</head>
+ 
+	<body>
+		<p>使い物にならんく＊か＊チャットご＊サイトです</p>
+		<p></p>
+ 		<form method="post" onsubmit="writeMessage(); return false;">
+			<input id="message" name="message" type="text" value="" />
+			<input type="button" value="送信" onclick="writeMessage()">
+		</form>
+ 		<div id="messageTextBox"></div>
+	</body>
+</html>

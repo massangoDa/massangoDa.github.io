@@ -1,0 +1,6 @@
+#messageTextBox {
+	border: 1px solid #999999;
+	width:640px;
+	height:480px;
+	overflow: scroll;
+}

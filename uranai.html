@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja-jp"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/sanitize.css/forms.css">
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+<link rel="stylesheet" href="button.css">
+<link rel="stylesheet" href="navi.css">
+
+<style>
+    body{
+        background-color: aquamarine;
+    }
+    p{
+        text-align: center;
+        font-size: 2em;
+        margin-top: 100px;
+    }
+</style>
+
+</head>
+<body>
+  <header id="header">
+    <h1>おみくじ</h1>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">パクリ</a></li>
+        <li class="has-child"><a href="#">サイトで作っている物</a>
+          <ul>
+          <li><a href="weather.html">お天気サイト</a></li>
+          <li><a href="uranai.html">おみくじ</a></li>
+          <li class="has-child"><a href="#">games</a>
+            <ul>
+              <li><a href="game/games.html">マインスイーパー</a></li>
+              <li><a href="game/rpg.html">RPG</a></li>
+              <li><a href="game/tetorisu.html">テトリス</a></li>
+              <li><a href="game/oxgame.html">〇✕ゲーム</a></li>
+              <li><a href="app/freeHandWrite2.html">お絵描き</a></li>
+              <li><a href="game/inbe-da-.html">インベーダー</a></li>
+              <li><a href="game/osero.html">製作中</a></li>
+            </ul>
+          </li>
+          <li><a href="chat/index.html">chat</a></li>
+          </ul>
+        </li>
+        <li class="has-child"><a href="#">近日公開（予定してないけど）</a>
+          <ul>
+          <li><a href="test.html">test</a></li>
+          <li><a href="kiken.html">test2</a></li>
+          <li><a href="owaon.html">スマホ推奨</a></li>
+          <li><a href="ddos/トルネード三式.html">ddos(*注意*やりすぎるな)</a></li>
+          <li><a href="#">test5</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+      
+    </header>
+  <br><br><br><br><br>
+
+      <div class='btn'>
+        <button onclick="window.location.reload();">ボタンを押して再占い</button> 
+    </div>
+
+    <script>
+        let kujis = ['あれ？えっと、大吉なんですけど、データ改ざんするのやめてもらっていいですか？(笑)' , 'おー結構いいっすね、中吉っす、でももうちょっと頑張ってもらっていいですか？' , '小吉っす、これなんで小吉かっていうと、もうちょっとできるんじゃないかな？って思ったからです。明日から頑張ってもらっていいですか？' , 'いやぁ吉です...（励まし...運いいね)' , 'おお、凶...コメントないですｗ凶＝負け覚えといてくださいそしたら何か見えてくるはずです'];
+        let kuji = Math.floor(Math.random()* 5);
+
+
+        document.write('<p>あなたの運勢は ' + kujis[kuji] + '.</p>');
+ 
+
+
+    
+
+    </script>
+</body>
+</html>
